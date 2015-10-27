@@ -15,6 +15,19 @@ function register_theme_menus() {
 }
 add_action('init','register_theme_menus');
 
+
+//带入各种JS，wp_enqueue_script('name', url, array('jquery')//需要其他JS协同, 'version', false//header or true means footer);
+function wpt_theme_js() {
+	wp_enqueue_script('bootstrap_js', 'http://code.jquery.com/jquery-1.11.3.min.js', array('jquery'),'null', false);
+	// wp_enqueue_script('handlebars_js', get_template_directory_uri() . '/js/handlebars.min.js', array('jquery'),'null', false);
+	// wp_enqueue_script('google_map_js', 'https://maps.googleapis.com/maps/api/js?v=3.exp&signed_in=true&libraries=places', '','',false);
+	// wp_enqueue_script('storelocator_js', get_template_directory_uri() . '/js/jquery.storelocator.js', array('jquery','handlebars_js'),'null', false);
+	wp_enqueue_script('subway_main_js', get_template_directory_uri() . '/js/java_script.js', array('jquery'),'null', false);
+}
+
+add_action('wp_enqueue_scripts', 'wpt_theme_js');
+
+
 //带入各种CSS
 function wpt_theme_styles() {
 	wp_enqueue_style('bootstrap_css', 'https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css');
@@ -23,20 +36,6 @@ function wpt_theme_styles() {
 }
 
 add_action('wp_enqueue_scripts', 'wpt_theme_styles');
-
-
-
-
-//带入各种JS，wp_enqueue_script('name', url, array('jquery')//需要其他JS协同, 'version', false//header or true means footer);
-// function wpt_theme_js() {
-// 	wp_enqueue_script('bootstrap_js', get_template_directory_uri() . '/js/bootstrap.min.js', array('jquery'),'null', false);
-// 	wp_enqueue_script('handlebars_js', get_template_directory_uri() . '/js/handlebars.min.js', array('jquery'),'null', false);
-// 	wp_enqueue_script('google_map_js', 'https://maps.googleapis.com/maps/api/js?v=3.exp&signed_in=true&libraries=places', '','',false);
-// 	wp_enqueue_script('storelocator_js', get_template_directory_uri() . '/js/jquery.storelocator.js', array('jquery','handlebars_js'),'null', false);
-// 	wp_enqueue_script('subway_main_js', get_template_directory_uri() . '/js/header.js', array('jquery'),'null', false);
-// }
-
-// add_action('wp_enqueue_scripts', 'wpt_theme_js');
 
 
 ?>

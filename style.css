@@ -9,8 +9,6 @@ License: Exclusive for Jvrweb.com
 Tags: Random, vivid
 Text Domain: Bar
 */
-
-
 /**
  * Table of Contents
  *
@@ -46,4 +44,118 @@ Text Domain: Bar
  *    16.7 - Desktop X-Large
  * 17.0 - Print
  */
+/************************************
+				Overall, Reset Style
+************************************/
+@import url("https://necolas.github.io/normalize.css/3.0.2/normalize.css");
+/* line 56, sass/style.scss */
+* {
+  font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+}
 
+/************************************
+	Main Color Scheme & Import Setup
+************************************/
+/* line 68, sass/style.scss */
+input, textarea {
+  background: #45B29D;
+  border-radius: 5px;
+  padding: 4px 4px 4px 10px;
+  margin-top: 5px;
+  height: 35px;
+  width: 100%;
+  border: 0;
+}
+
+/* line 80, sass/style.scss */
+textarea {
+  height: 258px;
+}
+
+/* line 85, sass/style.scss */
+input, textarea, textarea, input:focus, textarea:focus, textarea:focus {
+  color: #fff;
+}
+
+/* Contact Us Page */
+/* line 137, sass/style.scss */
+.cu_container {
+  display: flex;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  width: 85%;
+  margin: 10px auto;
+  max-width: 1280px;
+  background: #EFC94C;
+  border-radius: 10px;
+  box-shadow: 0 0 5px #333333;
+}
+
+/* line 147, sass/style.scss */
+.cu_form {
+  background: #fff;
+  border-radius: 10px;
+  width: 450px;
+  height: 680px;
+  padding: 10px;
+  box-shadow: 2px 2px 5px 0px #333333;
+  position: relative;
+}
+/* line 155, sass/style.scss */
+.cu_form #head_logo {
+  position: absolute;
+  z-index: 200;
+  display: block;
+  top: 10px;
+  right: 20px;
+  width: 60px;
+}
+/* line 163, sass/style.scss */
+.cu_form h1 {
+  text-align: center;
+  font-weight: 800;
+}
+/* line 167, sass/style.scss */
+.cu_form input::-webkit-input-placeholder, .cu_form textarea::-webkit-input-placeholder {
+  color: #fff;
+}
+/* line 168, sass/style.scss */
+.cu_form input:-moz-placeholder, .cu_form textarea:-moz-placeholder {
+  color: #fff;
+}
+/* line 169, sass/style.scss */
+.cu_form input::-moz-placeholder, .cu_form textarea::-moz-placeholder {
+  color: #fff;
+}
+/* line 170, sass/style.scss */
+.cu_form input:-ms-input-placeholder, .cu_form textarea:-ms-input-placeholder {
+  color: #fff;
+}
+/* line 171, sass/style.scss */
+.cu_form input[type="submit"], .cu_form textarea[type="submit"] {
+  background: #E27A3F;
+  color: #fff;
+}
+
+@media screen and (max-width: 765px) {
+  /* line 179, sass/style.scss */
+  .cu_container {
+    width: 100%;
+    margin: 0;
+    padding: 5%;
+  }
+
+  /* line 184, sass/style.scss */
+  body {
+    min-width: 320px;
+  }
+  /* line 186, sass/style.scss */
+  body p:first-child {
+    display: none;
+  }
+}

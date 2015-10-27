@@ -1,0 +1,188 @@
+/*
+Theme Name: Jvr Web Development
+Theme URI: http://www.jvrweb.com
+Author: Yan Liu
+Author URI: http://www.jvrweb.com
+Description: This theme is developed for Jvr Web development.
+Version: 1.0
+License: Exclusive for Jvrweb.com
+Tags: Random, vivid
+Text Domain: Bar
+*/
+
+
+/**
+ * Table of Contents
+ *
+ * 1.0 - Reset
+ * 2.0 - Genericons
+ * 3.0 - Typography
+ * 4.0 - Elements
+ * 5.0 - Forms
+ * 6.0 - Navigations
+ *   6.1 - Links
+ *   6.2 - Menus
+ * 7.0 - Accessibility
+ * 8.0 - Alignments
+ * 9.0 - Clearings
+ * 10.0 - Header
+ * 11.0 - Widgets
+ * 12.0 - Content
+ *    12.1 - Posts and pages
+ *    12.2 - Post Formats
+ *    12.3 - Comments
+ * 13.0 - Footer
+ * 14.0 - Media
+ *    14.1 - Captions
+ *    14.2 - Galleries
+ * 15.0 - Multisite
+ * 16.0 - Media Queries
+ *    16.1 - Mobile Large
+ *    16.2 - Tablet Small
+ *    16.3 - Tablet Large
+ *    16.4 - Desktop Small
+ *    16.5 - Desktop Medium
+ *    16.6 - Desktop Large
+ *    16.7 - Desktop X-Large
+ * 17.0 - Print
+ */
+
+
+
+/************************************
+				Overall, Reset Style
+************************************/
+@import url('https://necolas.github.io/normalize.css/3.0.2/normalize.css');
+* {
+	font-family:"Helvetica Neue",Helvetica,Arial,sans-serif; 
+}
+/************************************
+	Main Color Scheme & Import Setup
+************************************/
+$color_one: #334D5C;	//blue
+$color_two: #45B29D;	//green
+$color_three: #EFC94C;	//Yellow
+$color_four: #E27A3F;		//orange
+$color_five: #DF5A49;		//red
+
+input {
+  background: $color_two;
+  border-radius: 5px;
+  // box-shadow: 0 0 3px rgba(0, 0, 0, 0.12) inset;
+  padding: 4px 4px 4px 10px;
+  margin-top: 5px;
+  // border: 2px solid #1BB295;
+  height: 35px;
+  width:100%;
+  border:0;
+}
+
+textarea {
+	@extend input;
+	height:258px
+}
+
+input, textarea, input:focus, textarea:focus {
+	color: #fff;
+}
+
+//CSS3 Prefix
+@mixin display-flex(){
+	display:flex;
+	display:-webkit-box;
+	display:-ms-flexbox;
+	display:-webkit-flex;
+}
+@mixin flex-wrap($type) {
+	-webkit-flex-wrap:$type;
+	    -ms-flex-wrap:$type;
+		    flex-wrap:$type;
+}
+@mixin align-items($type){
+		-webkit-box-align: $type;
+	-webkit-align-items: $type;
+	    -ms-flex-align: $type;
+	        align-items: $type;
+}
+
+@mixin justify-content($type){
+	    	-webkit-box-pack: $type;
+ -webkit-justify-content: $type;
+           -ms-flex-pack: $type;
+         justify-content: $type;	
+}
+@mixin flex-direction ($type){
+	 -webkit-flex-direction: $type;
+       -ms-flex-direction: $type;
+	         flex-direction: $type;	
+}
+@mixin transform ($type) {
+			  -webkit-transform: $type;
+			      -ms-transform: $type;
+			          transform: $type;
+}
+@mixin transition ($type) {
+	-webkit-transition: $type;
+					transition: $type;
+}
+@mixin background-linear($type) {
+	background-image: -webkit-linear-gradient($type);
+	background-image: -moz-linear-gradient($type);
+	background-image: linear-gradient($type);
+}
+
+
+/* Contact Us Page */
+
+.cu_container {
+	@include display-flex();
+	@include justify-content(center);
+	width:85%;
+	margin: 10px auto;
+	max-width: 1280px;
+	background: $color_three;
+	border-radius: 10px;
+	box-shadow: 0 0 5px #333333;
+}
+.cu_form {
+	background:#fff;
+	border-radius: 10px;
+	width:450px;
+	height:680px;
+	padding:10px;
+	box-shadow: 2px 2px 5px 0px rgba(51,51,51,1);
+	position: relative;
+	#head_logo {
+		position: absolute;
+		z-index:200;
+		display:block;
+		top:10px;
+		right:20px;
+		width:60px;
+	}
+	h1 {
+		text-align: center;
+		font-weight: 800;
+	}
+	input::-webkit-input-placeholder { color:#fff; }
+	input:-moz-placeholder { color:#fff; }
+	input::-moz-placeholder { color:#fff; }
+	input:-ms-input-placeholder { color:#fff; }
+	input[type="submit"] {
+		background: $color_four;
+		color: #fff;
+	}
+}
+
+
+@media screen and (max-width: 765px) {
+		.cu_container {
+			width:100%;
+			margin:0;
+			padding:5%;
+		}
+		body {
+			min-width:320px;
+	p:first-child { display:none; }
+}
+	}
